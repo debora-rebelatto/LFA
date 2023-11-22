@@ -33,16 +33,16 @@ As etapas de análise léxica, sintática e semântica em compiladores têm as s
 
 Essas etapas trabalham juntas para analisar, validar e interpretar o código fonte, assegurando que o programa seja corretamente compreendido e traduzido para código executável.
 
-3-
-S::= aS | bA | cS | ε
-A::= aS | cS | ε
+3-  
+S::= aS | bA | cS | ε  
+A::= aS | cS | ε  
 
-4-
-S::= bA | cB
-A::= aA | bB | cA | ε
-B::= aB | bA | cB
+4-  
+S::= bA | cB  
+A::= aA | bB | cA | ε  
+B::= aB | bA | cB  
 
-5-
-S::= aAcB
-A::= aA | aAb | ε
-B::= cb | ε
+5-  
+S::= aAcB  
+A::= aA | aAb | ε  
+B::= cb | ε  
