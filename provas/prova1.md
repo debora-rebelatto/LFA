@@ -34,15 +34,30 @@ As etapas de análise léxica, sintática e semântica em compiladores têm as s
 Essas etapas trabalham juntas para analisar, validar e interpretar o código fonte, assegurando que o programa seja corretamente compreendido e traduzido para código executável.
 
 3-  
-S::= aS | bA | cS | ε  
-A::= aS | cS | ε  
+- Começamos com o símbolo inicial S e permitimos a inclusão de 'a's ou 'c's.  
+- Se encontrarmos um 'b', mudamos para o não-terminal A para evitar concatenar mais 'b's.  
+- O não-terminal A permite a inclusão de 'a's e 'c's, mas não permite 'b's.  
+
+Então, a gramática resultante é:
+
+$S::= aS | bA | cS | ε$  
+$A::= aS | cS | ε$  
 
 4-  
-S::= bA | cB  
-A::= aA | bB | cA | ε  
-B::= aB | bA | cB  
+- Começamos com o símbolo inicial S e criamos produções que permitem 'b' ou 'c' para começar.
+- Em seguida, usamos os não-terminais A e B para controlar o número de ocorrências de 'b' de forma a garantir que seja ímpar.
+- A permite 'a's, 'b's e 'c's, mantendo o número de 'b's ímpar.
+- B também permite 'a's, 'b's e 'c's, mas garante que o número de 'b's se mantenha ímpar ao alternar entre A e B.
+
+Então, a gramática resultante é:
+
+Essa gramática garante que todas as strings geradas estejam na linguagem desejada, com o número de ocorrências de 'b' sendo ímpar e 'x' nunca iniciando com 'a'.
+
+$S::= bA | cB$  
+$A::= aA | bB | cA | ε$  
+$B::= aB | bA | cB$  
 
 5-  
-S::= aAcB  
-A::= aA | aAb | ε  
-B::= cb | ε  
+$S::= aAcB$  
+$A::= aA | aAb | ε$  
+$B::= cb | ε$
